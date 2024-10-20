@@ -42,7 +42,7 @@ describe('DrugService', () => {
   });
 
   it('should throw an error for an empty RxCUI', async () => {
-    await expect(getProprietaryInfo('', 'RXNORM', '123')).rejects.toThrow(ApiError);
+    await expect(getProprietaryInfo('', 'RXNORM', '123')).rejects.toThrow(ValidationError);
   });
 
   it('should throw an API error if proprietary information is not found', async () => {

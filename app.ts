@@ -15,7 +15,6 @@ app.get('/drug/:name', async (req: Request, res: Response, next: NextFunction) =
 
   try {
     const details = await getDrugDetails(drugName);
-    console.log('//??', details)
     res.json(details);
   } catch (error) {
     next(error);
@@ -32,7 +31,6 @@ app.get('/proprietary/:rxcui', async (req: Request, res: Response, next: NextFun
 
   try {
     const proprietaryInfo = await getProprietaryInfo(rxcui); // TODO: need to consider srclist and rxaui
-    console.log('...', proprietaryInfo)
     res.json(proprietaryInfo);
   } catch (error) {
     next(error);

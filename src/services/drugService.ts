@@ -33,7 +33,7 @@ export const getDrugDetails = async (drugName: string): Promise<DrugDetails[]> =
 
 export const getProprietaryInfo = async (rxcui: string, srclist?: string, rxaui?: string): Promise<any> => {
   if (!rxcui || typeof rxcui !== 'string') {
-    throw new ApiError('Invalid RxCUI');
+    throw new ValidationError('Invalid RxCUI');
   }
 
   try {
